@@ -1,11 +1,46 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { Stack, Container, Box, Button, Typography, Grid } from '@mui/material';
+import { NextPage } from 'next';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import RoomInput from '@/components/roomInput';
+import CalculationResultRow from '@/components/calculationResultRow';
 
-const inter = Inter({ subsets: ['latin'] })
+const Home: NextPage = () => {
+  return (
+    <Container maxWidth="lg">
+      <Stack mt={5} spacing={4} direction="column" justifyContent="center" alignItems="center">
+        <Grid container alignItems="center" justifyContent="center" spacing={2}>
+          <Grid item>
+            <Typography variant="h2">Smart Host</Typography>
+          </Grid>
+          <Grid item>
+            <PsychologyIcon sx={{ fontSize: 70 }} />
+          </Grid>
+        </Grid>
+        <Box>
+          <Typography>Find out how much you can make with your available rooms!</Typography>
+        </Box>
+        <Grid container alignItems="center" justifyContent="center" spacing={2}>
+          <Grid item>
+            <RoomInput title={'Premium Rooms'} />
+          </Grid>
+          <Grid item>
+            <RoomInput title={'Economy Rooms'} />
+          </Grid>
+          <Grid item>
+            <Button>Calculate</Button>
+          </Grid>
+        </Grid>
+        <Typography>Results</Typography>
+        <CalculationResultRow title="Premium Rooms" result={[3, 3, 735]}/>
+        <CalculationResultRow title="Economy Rooms" result={[3, 3, 735]}/>
+      </Stack>
+    </Container>
+  );
+};
 
-export default function Home() {
+export default Home;
+
+/*export default function Home() {
   return (
     <>
       <Head>
@@ -120,4 +155,4 @@ export default function Home() {
       </main>
     </>
   )
-}
+}*/
