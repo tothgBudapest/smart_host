@@ -1,9 +1,15 @@
 import { Box, Grid, TextField, Typography } from '@mui/material';
 import React from 'react';
 
+interface ResultProps {
+  freeRooms: number;
+  roomUsage: number;
+  profit: number;
+}
+
 interface ComponentProps {
   title: string;
-  result: Array<number>;
+  result: ResultProps | null;
 }
 
 export default function CalculationResultRow({title, result}: ComponentProps) {
@@ -12,15 +18,15 @@ export default function CalculationResultRow({title, result}: ComponentProps) {
     <Grid container alignItems="center" justifyContent="center" spacing={2}>
       <Grid item>
         <Typography>{title}: </Typography>
-        <Typography>{result[0]}</Typography>
+        <Typography>{result?.freeRooms}</Typography>
       </Grid>
       <Grid item>
         <Typography>Usage: </Typography>
-        <Typography>{result[1]}</Typography>
+        <Typography>{result?.roomUsage}</Typography>
       </Grid>
       <Grid item>
         <Typography>Profit: </Typography>
-        <Typography>{result[2]}EUR</Typography>
+        <Typography>{result?.profit}EUR</Typography>
       </Grid>
     </Grid>
   );

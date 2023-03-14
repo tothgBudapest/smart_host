@@ -7,7 +7,7 @@ interface ComponentProps {
 }
 
 export default function RoomInput({title, callback}: ComponentProps) {
-  const [num, setNum] = React.useState<number | null>(null);
+  const [num, setNum] = React.useState<string>();
 
   return (
     <Box>
@@ -16,7 +16,7 @@ export default function RoomInput({title, callback}: ComponentProps) {
         id="outlined-basic"
         label={title}
         variant="outlined"
-        onChange={(e) => setNum(e.target.value as unknown as number)}
+        onChange={(e) => setNum(e.target.value)}
         value={num}
       />
     </Box>
