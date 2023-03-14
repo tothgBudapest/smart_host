@@ -1,6 +1,6 @@
 const calculateRoomOccupancy = (
   potentialGuests: Array<number>,
-  freePremiumRooms: number,
+  freePremiumRooms: number ,
   freeEconomyRooms: number
 ) => {
   let occupiedEconomyRooms = 0;

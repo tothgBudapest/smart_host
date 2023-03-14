@@ -1,5 +1,8 @@
 import { Box, Grid, TextField, Typography } from '@mui/material';
 import React from 'react';
+import { useStores } from '@/stores/stores';
+import ROOM_TYPE from '@/constants/room-types.constant';
+import { observer } from 'mobx-react';
 
 interface ResultProps {
   freeRooms: number;
@@ -8,26 +11,29 @@ interface ResultProps {
 }
 
 interface ComponentProps {
-  title: string;
-  result: ResultProps | null;
+  roomType: keyof typeof ROOM_TYPE;
 }
 
-export default function CalculationResultRow({title, result}: ComponentProps) {
+const CalculationResultRow = ({roomType}: ComponentProps) => {
+  const { occupancyStore } = useStores();
+  const occupancy = occupancyStore.getOccupancyByRoomType(roomType);
 
   return (
     <Grid container alignItems="center" justifyContent="center" spacing={2}>
       <Grid item>
-        <Typography>{title}: </Typography>
-        <Typography>{result?.freeRooms}</Typography>
+        <Typography>{roomType}</Typography>
+        <Typography>{occupancy?.freeRooms}</Typography>
       </Grid>
       <Grid item>
         <Typography>Usage: </Typography>
-        <Typography>{result?.roomUsage}</Typography>
+        <Typography>{occupancy?.usage}</Typography>
       </Grid>
       <Grid item>
         <Typography>Profit: </Typography>
-        <Typography>{result?.profit}EUR</Typography>
+        <Typography>{occupancy?.profit}EUR</Typography>
       </Grid>
     </Grid>
   );
 }
+
+export default observer(CalculationResultRow);

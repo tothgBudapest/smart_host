@@ -1,9 +1,13 @@
 import { Stack, Container, Box, Button, Typography, Grid, TextField } from '@mui/material';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import CalculationResultRow from '@/components/calculationResultRow';
+import RoomInput from '@/components/roomInput';
 import { GITHUB_GUESTS_MOCK_URL } from '@/constants/resources-url.constant';
 import React from 'react';
 import calculateRoomOccupancy from '@/utils/roomCalculator';
+import { useStores } from '@/stores/stores';
+import { observer } from 'mobx-react';
+import ROOM_TYPE from '@/constants/room-types.constant';
 
 interface ResultProps {
   freeRooms: number;
@@ -25,25 +29,29 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home(props: PageProps) {
-  const [premium, setPremium] = React.useState<number>(0);
-  const [economy, setEconomy] = React.useState<number>(0);
-  const [premiumResult, setPremiumResult] = React.useState<ResultProps | null>(null);
-  const [economyResult, setEconomyResult] = React.useState<ResultProps | null>(null);
+const Home = (props: PageProps) => {
+  const { occupancyStore } = useStores();
   const guests = JSON.parse(JSON.stringify(props.guests).replaceAll("\\s", ""));
   let result = null;
 
   const calcHandler = () => {
-    result = calculateRoomOccupancy(guests, premium, economy);
-    setPremiumResult({freeRooms: premium, roomUsage: result.occupiedPremiumRooms, profit: result.premiumProfit});
-    setEconomyResult({freeRooms: economy, roomUsage: result.occupiedEconomyRooms, profit: result.economyProfit});
+    if(occupancyStore.freePremiumRooms && occupancyStore.freeEconomyRooms) {
+      result = calculateRoomOccupancy(guests, occupancyStore.freePremiumRooms, occupancyStore.freeEconomyRooms);
+      occupancyStore.setOccupancyData({
+        premium: {
+          usage: result.occupiedPremiumRooms,
+          profit: result.premiumProfit
+        },
+        economy: {
+          usage: result.occupiedEconomyRooms,
+          profit: result.economyProfit
+        }
+      })
+    }
   }
 
   const clearHandler = () => {
-    setEconomy(0);
-    setEconomyResult(null);
-    setPremium(0);
-    setPremiumResult(null);
+    occupancyStore.clear();
   }
 
   return (
@@ -62,38 +70,26 @@ export default function Home(props: PageProps) {
         </Box>
         <Grid container alignItems="center" justifyContent="center" spacing={2}>
           <Grid item>
-            <TextField
-              type="number"
-              id="outlined-basic"
-              label={'Premium Rooms'}
-              variant="outlined"
-              onChange={(e) => setPremium(e.target.value as unknown as number)}
-              value={premium}
-            />
+            <RoomInput type={ROOM_TYPE.PREMIUM}/>
           </Grid>
           <Grid item>
-            <TextField
-              type="number"
-              id="outlined-basic"
-              label={'Economy Rooms'}
-              variant="outlined"
-              onChange={(e) => setEconomy(e.target.value as unknown as number)}
-              value={economy}
-            />
+            <RoomInput type={ROOM_TYPE.ECONOMY}/>
           </Grid>
           <Grid item>
-            <Button onClick={calcHandler}>Calculate</Button>
+            <Button variant="contained" onClick={calcHandler}>Calculate</Button>
             <Button onClick={clearHandler}>Clear</Button>
           </Grid>
         </Grid>
-        {premiumResult && economyResult &&
+        {occupancyStore.occupancyResult &&
             <>
                 <Typography>Results</Typography>
-                <CalculationResultRow title="Premium Rooms" result={premiumResult}/>
-                <CalculationResultRow title="Economy Rooms" result={economyResult}/>
+                <CalculationResultRow roomType={ROOM_TYPE.PREMIUM}/>
+                <CalculationResultRow roomType={ROOM_TYPE.ECONOMY}/>
             </>
         }
       </Stack>
     </Container>
   );
 };
+
+export default observer(Home);

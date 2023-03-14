@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Aurora/.idea/aurora.iml" filepath="$PROJECT_DIR$/../Aurora/.idea/aurora.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../charles-faram/.idea/charles-faram.iml" filepath="$PROJECT_DIR$/../charles-faram/.idea/charles-faram.iml" />
       <module fileurl="file://$PROJECT_DIR$/../moviesearch/.idea/moviesearch.iml" filepath="$PROJECT_DIR$/../moviesearch/.idea/moviesearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/smart_host.iml" filepath="$PROJECT_DIR$/.idea/smart_host.iml" />
     </modules>

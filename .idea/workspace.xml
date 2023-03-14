@@ -2,22 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f6a9882-b620-48dd-8878-e70334f153c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/constants/resources-url.constant.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/roomCalculator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/room-types.constant.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stores/occupancyStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stores/stores.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aurora/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aurora/packages/app/pages/auth/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Aurora/packages/app/pages/auth/signin.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aurora/packages/app/src/components/configuration/authorisation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Aurora/packages/app/src/components/configuration/authorisation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aurora/packages/app/src/components/configuration/navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Aurora/packages/app/src/components/configuration/navigation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aurora/packages/app/src/components/configuration/workflow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Aurora/packages/app/src/components/configuration/workflow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../charles-faram/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/../charles-faram/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../charles-faram/frontend/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../charles-faram/frontend/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../charles-faram/frontend/src/components/header/header.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../charles-faram/frontend/src/components/header/header.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../charles-faram/frontend/src/stores/AuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../charles-faram/frontend/src/stores/AuthStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../charles-faram/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../charles-faram/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../moviesearch/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../moviesearch/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/smart_host.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/smart_host.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/calculationResultRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calculationResultRow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/roomInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/roomInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/hello.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/roomCalculator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/roomCalculator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678730112875</updated>
       <workItem from="1678730113364" duration="1736000" />
-      <workItem from="1678735927237" duration="29161000" />
+      <workItem from="1678735927237" duration="50053000" />
     </task>
     <servers />
   </component>
