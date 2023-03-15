@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f6a9882-b620-48dd-8878-e70334f153c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/locales/pl/common.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aurora/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aurora/packages/app/pages/auth/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Aurora/packages/app/pages/auth/signin.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aurora/packages/app/src/components/configuration/authorisation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Aurora/packages/app/src/components/configuration/authorisation.tsx" afterDir="false" />
@@ -14,10 +13,7 @@
       <change beforePath="$PROJECT_DIR$/../charles-faram/frontend/src/stores/AuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../charles-faram/frontend/src/stores/AuthStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../charles-faram/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../charles-faram/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../moviesearch/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../moviesearch/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678730112875</updated>
       <workItem from="1678730113364" duration="1736000" />
-      <workItem from="1678735927237" duration="72863000" />
+      <workItem from="1678735927237" duration="73115000" />
     </task>
     <servers />
   </component>
