@@ -1,4 +1,5 @@
-import { Stack, Container, Box, Button, Typography, Grid, TextField } from '@mui/material';
+import { Stack, Container, Box, Button, Typography, Grid, Switch } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import OccupancyTable from '@/components/occupancyTable';
 import RoomInput from '@/components/roomInput';
@@ -10,6 +11,7 @@ import { useStores } from '@/stores/stores';
 import { observer } from 'mobx-react';
 import ROOM_TYPE from '@/constants/room-types.constant';
 import { useTranslation } from 'next-i18next';
+import ReactCountryFlag from 'react-country-flag';
 
 interface PageProps {
     guests: string;
@@ -28,7 +30,7 @@ export async function getStaticProps({ locale }: any) {
 
 const Home = (props: PageProps) => {
     const { occupancyStore } = useStores();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     let result = null;
 
     const getGuests = () => {
@@ -37,6 +39,11 @@ const Home = (props: PageProps) => {
 
     const clearHandler = () => {
         occupancyStore.clear();
+    };
+
+    const handleCountryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const languageToChange = event.target.checked ? 'en' : 'pl'
+        i18n.changeLanguage(languageToChange);
     };
 
     const calcHandler = () => {
@@ -58,9 +65,20 @@ const Home = (props: PageProps) => {
     return (
         <Container maxWidth='lg'>
             <Stack mt={5} spacing={3} direction='column' justifyContent='center' alignItems='center'>
+                <Grid container direction="row" alignItems='center' justifyContent='center' spacing={2}>
+                    <ReactCountryFlag countryCode="PL" style={{
+                        fontSize: '2em',
+                        lineHeight: '2em',
+                    }} />
+                    <Switch defaultChecked onChange={handleCountryChange} color='default' />
+                    <ReactCountryFlag countryCode="GB" style={{
+                        fontSize: '2em',
+                        lineHeight: '2em',
+                    }} />
+                </Grid>
                 <Grid container alignItems='center' justifyContent='center' spacing={2}>
                     <Grid item>
-                        <Typography data-testid="index_title" variant='h3' color='primary'>{t('title')}</Typography>
+                        <Typography data-testid='index_title' variant='h3' color='primary'>{t('title')}</Typography>
                     </Grid>
                     <Grid item>
                         <PsychologyIcon data-testid={'index_title_icon'} color='primary' sx={{ fontSize: 60 }} />
@@ -77,8 +95,10 @@ const Home = (props: PageProps) => {
                         <RoomInput type={ROOM_TYPE.ECONOMY} />
                     </Grid>
                     <Grid item pr={5}>
-                        <Button data-testid={'index_calculate_button'} variant='contained' onClick={calcHandler} sx={{ mr: 2 }}>{t('calculate')}</Button>
-                        <Button data-testid={'index_clear_button'} variant='outlined' disabled={!occupancyStore.occupancyResult}
+                        <Button data-testid={'index_calculate_button'} variant='contained' onClick={calcHandler}
+                                sx={{ mr: 2 }}>{t('calculate')}</Button>
+                        <Button data-testid={'index_clear_button'} variant='outlined'
+                                disabled={!occupancyStore.occupancyResult}
                                 onClick={clearHandler}>{t('clear')}</Button>
                     </Grid>
                 </Grid>
