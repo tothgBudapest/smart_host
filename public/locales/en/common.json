@@ -1,0 +1,12 @@
+{
+  "title": "Smart Host",
+  "description": "Find out how much you can make with your available rooms!",
+  "calculate": "Calculate",
+  "clear": "Clear",
+  "economy": "economy rooms",
+  "premium": "premium rooms",
+  "room_type": "Room type",
+  "free_rooms": "Free rooms",
+  "usage": "Usage",
+  "profit": "Profit"
+}
